@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hurley Landscaping offers professional lawn care services, including lawn mowing, weed control, tree trimming, and landscape design. Contact us today!">
     <title>Hurley Landscaping - Your Lawn Care Experts</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -13,9 +14,9 @@
             <p>Your Lawn Care Experts</p>
             <nav>
                 <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#services" aria-label="View our services">Services</a></li>
+                    <li><a href="#contact" aria-label="Contact us">Contact</a></li>
+                    <li><a href="#gallery" aria-label="View our gallery">Gallery</a></li>
                 </ul>
             </nav>
         </div>
@@ -36,11 +37,23 @@
         <section id="gallery">
             <h2>Our Work</h2>
             <div class="gallery-grid">
-    <img src="images/lawn-mowing-1.jpg" alt="Lawn mowing service">
-    <img src="images/weed-control-1.jpg" alt="Weed control service">
-    <img src="images/tree-trimming-1.jpg" alt="Tree trimming service">
-    <img src="images/landscape-design-1.jpg" alt="Landscape design project">
-</div>
+                <figure>
+                    <img src="images/lawn-mowing-1.jpg" alt="Lawn mowing service">
+                    <figcaption>Lawn Mowing</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/weed-control-1.jpg" alt="Weed control service">
+                    <figcaption>Weed Control</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/tree-trimming-1.jpg" alt="Tree trimming service">
+                    <figcaption>Tree Trimming</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/landscape-design-1.jpg" alt="Landscape design project">
+                    <figcaption>Landscape Design</figcaption>
+                </figure>
+            </div>
         </section>
 
         <section id="contact">
@@ -53,7 +66,7 @@
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
                 <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
 
                 <label for="service">Service:</label>
                 <select id="service" name="service">
@@ -76,10 +89,11 @@
         <div class="footer-content">
             <p>&copy; 2023 Hurley Landscaping</p>
             <ul class="social-links">
-                <li><a href="https://facebook.com" aria-label="Facebook">Facebook</a></li>
-                <li><a href="https://instagram.com" aria-label="Instagram">Instagram</a></li>
-                <li><a href="https://twitter.com" aria-label="Twitter">Twitter</a></li>
+                <li><a href="https://facebook.com" aria-label="Visit our Facebook page">Facebook</a></li>
+                <li><a href="https://instagram.com" aria-label="Visit our Instagram page">Instagram</a></li>
+                <li><a href="https://twitter.com" aria-label="Visit our Twitter page">Twitter</a></li>
             </ul>
+            <a href="#top" class="back-to-top" aria-label="Back to top">↑ Back to Top</a>
         </div>
     </footer>
 
