@@ -4,6 +4,7 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     // Get form elements
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
     const service = document.getElementById('service').value;
     const message = document.getElementById('message').value.trim();
     const formMessage = document.getElementById('form-message');
@@ -13,8 +14,14 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     formMessage.classList.remove('success', 'error');
 
     // Validate form fields
-    if (!name || !email || !message) {
-        formMessage.textContent = 'Please fill out all required fields.';
+    if (!name) {
+        formMessage.textContent = 'Name is required.';
+        formMessage.classList.add('error');
+        return;
+    }
+
+    if (!email) {
+        formMessage.textContent = 'Email is required.';
         formMessage.classList.add('error');
         return;
     }
@@ -25,9 +32,22 @@ document.getElementById('contactForm').addEventListener('submit', function (even
         return;
     }
 
+    if (phone && !validatePhone(phone)) {
+        formMessage.textContent = 'Please enter a valid phone number (e.g., 123-456-7890).';
+        formMessage.classList.add('error');
+        return;
+    }
+
+    if (!message) {
+        formMessage.textContent = 'Message is required.';
+        formMessage.classList.add('error');
+        return;
+    }
+
     // Log data to the console (for now)
     console.log('Name:', name);
     console.log('Email:', email);
+    console.log('Phone:', phone);
     console.log('Service:', service);
     console.log('Message:', message);
 
@@ -48,4 +68,10 @@ document.getElementById('contactForm').addEventListener('submit', function (even
 function validateEmail(email) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
+}
+
+// Helper function to validate phone number
+function validatePhone(phone) {
+    const regex = /^\d{3}-\d{3}-\d{4}$/; // Matches 123-456-7890
+    return regex.test(phone);
 }
