@@ -1,16 +1,28 @@
+/* CSS Variables */
+:root {
+    --primary-color: #4CAF50;
+    --primary-hover: #45a049;
+    --background-light: #f4f4f4;
+    --text-color: #333;
+    --white: #fff;
+    --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
 /* General Styles */
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--background-light);
+    color: var(--text-color);
 }
 
 header {
-    background: #4CAF50;
-    color: white;
+    background: var(--primary-color);
+    color: var(--white);
     padding: 2rem 0;
     text-align: center;
 }
@@ -35,13 +47,14 @@ nav ul {
 }
 
 nav ul li a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color var(--transition);
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a:focus {
     color: #d4ffd4;
 }
 
@@ -54,14 +67,14 @@ section {
     padding: 2rem;
     margin: 1rem auto;
     max-width: 800px;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
 }
 
 h2 {
     margin-top: 0;
-    color: #4CAF50;
+    color: var(--primary-color);
 }
 
 /* Services Section */
@@ -71,7 +84,7 @@ h2 {
 }
 
 #services ul li {
-    background: #f4f4f4;
+    background: var(--background-light);
     margin: 0.5rem 0;
     padding: 0.75rem;
     border-radius: 4px;
@@ -81,15 +94,16 @@ h2 {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.75rem 1.5rem;
-    background: #4CAF50;
-    color: white;
+    background: var(--primary-color);
+    color: var(--white);
     text-decoration: none;
     border-radius: 4px;
-    transition: background 0.3s ease;
+    transition: background var(--transition);
 }
 
-.cta-button:hover {
-    background: #45a049;
+.cta-button:hover,
+.cta-button:focus {
+    background: var(--primary-hover);
 }
 
 /* Gallery Section */
@@ -102,8 +116,13 @@ h2 {
 .gallery-grid img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition);
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
 }
 
 /* Contact Form */
@@ -117,32 +136,37 @@ label {
     font-weight: bold;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     padding: 0.75rem;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
-    transition: border-color 0.3s ease;
+    transition: border-color var(--transition);
 }
 
-input:focus, select:focus, textarea:focus {
-    border-color: #4CAF50;
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary-color);
     outline: none;
 }
 
 button {
     padding: 0.75rem;
-    background: #4CAF50;
-    color: white;
+    background: var(--primary-color);
+    color: var(--white);
     border: none;
     border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background var(--transition);
 }
 
-button:hover {
-    background: #45a049;
+button:hover,
+button:focus {
+    background: var(--primary-hover);
 }
 
 #form-message {
@@ -167,7 +191,7 @@ footer {
     text-align: center;
     padding: 1.5rem 0;
     background: #333;
-    color: white;
+    color: var(--white);
     margin-top: 2rem;
 }
 
@@ -181,13 +205,14 @@ footer .social-links {
 }
 
 footer .social-links a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color var(--transition);
 }
 
-footer .social-links a:hover {
-    color: #4CAF50;
+footer .social-links a:hover,
+footer .social-links a:focus {
+    color: var(--primary-color);
 }
 
 /* Responsive Design */
@@ -207,5 +232,38 @@ footer .social-links a:hover {
 
     section {
         padding: 1rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    form {
+        gap: 0.75rem;
+    }
+
+    input,
+    select,
+    textarea {
+        padding: 0.5rem;
+    }
+
+    button {
+        padding: 0.5rem;
     }
 }
