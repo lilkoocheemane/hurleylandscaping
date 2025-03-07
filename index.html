@@ -3,51 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hurley Landscaping</title>
+    <title>Hurley Landscaping - Your Lawn Care Experts</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Hurley Landscaping</h1>
-        <p>Your Lawn Care Experts</p>
+        <div class="header-content">
+            <h1>Hurley Landscaping</h1>
+            <p>Your Lawn Care Experts</p>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Lawn Mowing</li>
-            <li>Weed Control</li>
-            <li>Tree Trimming</li>
-            <li>Landscape Design</li>
-        </ul>
-    </section>
+    <main>
+        <section id="services">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Lawn Mowing</li>
+                <li>Weed Control</li>
+                <li>Tree Trimming</li>
+                <li>Landscape Design</li>
+            </ul>
+            <a href="#contact" class="cta-button">Request a Service</a>
+        </section>
 
-    <section id="contact">
-        <h2>Request a Service</h2>
-        <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+        <section id="gallery">
+            <h2>Our Work</h2>
+            <div class="gallery-grid">
+                <!-- Add images here -->
+                <img src="image1.jpg" alt="Before and after lawn mowing">
+                <img src="image2.jpg" alt="Landscape design project">
+                <img src="image3.jpg" alt="Tree trimming example">
+            </div>
+        </section>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        <section id="contact">
+            <h2>Request a Service</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-            <label for="service">Service:</label>
-            <select id="service" name="service">
-                <option value="mowing">Lawn Mowing</option>
-                <option value="weeding">Weed Control</option>
-                <option value="trimming">Tree Trimming</option>
-                <option value="design">Landscape Design</option>
-            </select>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
 
-            <button type="submit">Submit</button>
-        </form>
-    </section>
+                <label for="service">Service:</label>
+                <select id="service" name="service">
+                    <option value="mowing">Lawn Mowing</option>
+                    <option value="weeding">Weed Control</option>
+                    <option value="trimming">Tree Trimming</option>
+                    <option value="design">Landscape Design</option>
+                </select>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell us about your project" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+            <div id="form-message"></div> <!-- For success/error messages -->
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2023 Hurley Landscaping</p>
+        <div class="footer-content">
+            <p>&copy; 2023 Hurley Landscaping</p>
+            <ul class="social-links">
+                <li><a href="https://facebook.com" aria-label="Facebook">Facebook</a></li>
+                <li><a href="https://instagram.com" aria-label="Instagram">Instagram</a></li>
+                <li><a href="https://twitter.com" aria-label="Twitter">Twitter</a></li>
+            </ul>
+        </div>
     </footer>
 
     <script src="script.js"></script>
